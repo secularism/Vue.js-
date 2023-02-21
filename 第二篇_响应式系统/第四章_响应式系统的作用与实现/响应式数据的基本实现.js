@@ -10,9 +10,9 @@
 const bucket = new Set()
 // 原始数据
 const data = { text: 'hello world', age: 18 }
-// 为原始数据进行Proxy代理
+// 2.为原始数据进行Proxy代理
 const obj = new Proxy(data, {
-  // 当读取操作时，触发get函数，拦截读取操作
+  // 3.当读取操作时，触发get函数，拦截读取操作
   get(target, key) {
     /**
      * target 是拦截的目标对象，这里是data
@@ -23,7 +23,7 @@ const obj = new Proxy(data, {
     // 最后将该值返回
     return target[key]
   },
-  // 拦截设置操作
+  // 4.拦截设置操作
   set(target, key, newVal) {
     // newVal是需要设置的新值: hello vue3
     // 将新值赋值给该对象的属性中
